@@ -134,7 +134,7 @@ export default function ProductTable({ tableData }) {
               </tbody>
             </table>
 
-            <div className=" py-2 flex justify-between">
+            <div className=" py-2 flex justify-start gap-2 md:gap-0 md:justify-between flex-wrap ">
               <IconBtnLg icon={<XCircleIcon className="h-10 w-10" />} classes="bg-red-100 text-red-500 hover:bg-red-500" title="Cancel"/>
               <IconBtnLg icon={<HandRaisedIcon className="h-10 w-10" />} classes="bg-indigo-100 text-indigo-500 hover:bg-indigo-500" title="Hold"/>
               <IconBtnLg icon={<ReceiptPercentIcon className="h-10 w-10" />} classes="bg-indigo-100 text-indigo-500 hover:bg-indigo-500" title="Discount"/>

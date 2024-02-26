@@ -13,8 +13,8 @@ export default function Filter({ filters = ["all-category", "electronics"] }) {
 
   return (
     <>
-      <div className="py-8 px-8 flex  relative">
-        <div className="flex justify-start gap-x-4">
+      <div className="py-8 px-8 flex  relative items-start">
+        <div className="flex justify-start  gap-4 flex-wrap">
           {filters.map((filter, index) => (
             <FilterBtn key={index} url={"/" + filter} title={filter} />
           ))}
@@ -45,6 +45,11 @@ export default function Filter({ filters = ["all-category", "electronics"] }) {
               <XMarkIcon
                 onClick={() => setOpen(false)}
                 className="h-10 w-10 absolute top-5 -left-14 cursor-pointer transition-all duration-100 hover:scale-110 text-white"
+              />
+
+              <XMarkIcon
+                onClick={() => setOpen(false)}
+                className="h-10 w-10 absolute top-6 right-2 cursor-pointer transition-all duration-100 hover:scale-110 text-black"
               />
             </div>
           </div>
