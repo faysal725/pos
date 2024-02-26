@@ -9,15 +9,13 @@ export default function ProductContainer() {
   const products = getAllProducts();
   const categories = getAllCategories();
 
-
-
   return (
     <section className="relative">
       {/* search bar  */}
       <SearchBar />
 
       {/* filters  */}
-      <div >
+      <div>
         <Filter filters={categories} />
       </div>
 
@@ -27,7 +25,7 @@ export default function ProductContainer() {
           flexWrap: "wrap",
           justifyContent: "space-between",
           gap: "16px",
-          paddingBottom: '50px'
+          paddingBottom: "50px",
         }}
         className="px-8"
       >
