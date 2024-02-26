@@ -130,34 +130,7 @@ export default function CheckoutHeader() {
         <></>
       )}
 
-      {/* modal  */}
-      {/* {openModal ? (
-          <div className="fixed top-0 left-0 bg-slate-600/30 w-full h-full z-10 flex justify-center items-center">
-            <div
-              className="p-3 relative bg-white "
-            >
 
-              <div>
-                <div className="relative">
-                  <p className="text-2xl font-medium">Settings</p>
-                </div>
-
-                <div>
-                  
-                </div>
-              </div>
-
-
-
-              <XMarkIcon
-                onClick={() => setOpenModal(false)}
-                className="h-10 w-10 absolute top-3 right-9 md:top-6 md:-right-14 cursor-pointer transition-all duration-100 hover:scale-110 text-black md:text-white"
-              />
-            </div>
-          </div>
-        ) : (
-          <></>
-        )} */}
 
       <Modal
         onClick={handleChildClick}
