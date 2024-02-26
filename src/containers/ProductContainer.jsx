@@ -8,17 +8,9 @@ import Card from "@/components/Card/Card";
 export default function ProductContainer() {
   const products = getAllProducts();
   const categories = getAllCategories();
-  console.log(categories);
 
-  const ProductRow = (allProducts) => {
-    return (
-      <ul className="mt-6 flex flex-wrap justify-start gap-6 px-8 h-full">
-        {allProducts.map((product, index) => (
-          <Card productDetails={product} key={index} />
-        ))}
-      </ul>
-    );
-  };
+
+
   return (
     <section className="relative">
       {/* search bar  */}

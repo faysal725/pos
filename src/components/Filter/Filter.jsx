@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import {
   EllipsisVerticalIcon,
   MagnifyingGlassIcon,
+  XMarkIcon,
 } from "@heroicons/react/20/solid";
 import Link from "next/link";
 import FilterBtn from "../Button/FilterBtn";
@@ -12,38 +13,45 @@ export default function Filter({ filters = ["all-category", "electronics"] }) {
 
   return (
     <>
-    <div className="py-8 px-8 flex  relative">
-      <div className="flex justify-start gap-x-4">
-        {filters.map((filter, index) => (
-          <FilterBtn key={index} url={"/" + filter} title={filter} />
-        ))}
-      </div>
-      <button className="ml-auto" onClick={() => setOpen(true)}>
-        <EllipsisVerticalIcon className="h-7 w-7" />
-      </button>
+      <div className="py-8 px-8 flex  relative">
+        <div className="flex justify-start gap-x-4">
+          {filters.map((filter, index) => (
+            <FilterBtn key={index} url={"/" + filter} title={filter} />
+          ))}
+        </div>
+        <button className="ml-auto" onClick={() => setOpen(true)}>
+          <EllipsisVerticalIcon className="h-7 w-7" />
+        </button>
 
+        {open ? (
+          <div className="fixed top-0 left-0 bg-slate-600/30 w-full h-full z-10 flex justify-end items-center">
+            <div
+              className={`p-8 relative bg-white w-full md:w-[850px] h-full transform-all duration-150 ${
+                open ? "translate-x-0" : "translate-x-full"
+              }`}
+            >
+              <div>
+                <p className="text-xl font-medium text-slate-800 text-center">
+                  Categories
+                </p>
+              </div>
 
-{open ? (
-        <div className="fixed top-0 left-0 bg-slate-600 w-full h-full z-10 flex justify-end items-center">
-          <div className=" bg-white w-96 h-full">
+              <div className="flex justify-start gap-x-4 py-8">
+                {filters.map((filter, index) => (
+                  <FilterBtn key={index} url={"/" + filter} title={filter} />
+                ))}
+              </div>
 
-
-            asdfsd
+              <XMarkIcon
+                onClick={() => setOpen(false)}
+                className="h-10 w-10 absolute top-5 -left-14 cursor-pointer transition-all duration-100 hover:scale-110 text-white"
+              />
+            </div>
           </div>
-        </div>
-      ) : (
-        <></>
-      )}
-
-    </div>
-
-    {/* {open ? (
-        <div className="absolute top-0 left-0 bg-slate-600 w-full h-full z-10">
-
-        </div>
-      ) : (
-        <></>
-      )} */}
+        ) : (
+          <></>
+        )}
+      </div>
     </>
   );
 }
