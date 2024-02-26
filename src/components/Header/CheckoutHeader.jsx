@@ -12,16 +12,28 @@ import IconBtnSml from "../Button/IconBtnSml";
 
 export default function CheckoutHeader() {
   return (
-    <header className="p-8 flex items-center gap-x-9  h-16">
+    // h-16
+    <header className="px-8 py-4 flex items-start gap-x-9  ">
       <Bars3Icon className="h-7 w-10 cursor-pointer" />
 
-
-      <IconBtnSml icon={<PencilSquareIcon className="h-7 w-7" />} title="note"/>
-      <IconBtnSml icon={<PaperAirplaneIcon className="h-7 w-7" />} title="Shipping"/>
-      <IconBtnSml icon={<ClockIcon className="h-7 w-7" />} title="Hold Orders"/>
-      <IconBtnSml icon={<PlusCircleIcon className="h-7 w-7" />} title="new item"/>
-
-      
+      <div className="flex items-center gap-3 lg:gap-9 flex-wrap">
+        <IconBtnSml
+          icon={<PencilSquareIcon className="h-7 w-7" />}
+          title="note"
+        />
+        <IconBtnSml
+          icon={<PaperAirplaneIcon className="h-7 w-7" />}
+          title="Shipping"
+        />
+        <IconBtnSml
+          icon={<ClockIcon className="h-7 w-7" />}
+          title="Hold Orders"
+        />
+        <IconBtnSml
+          icon={<PlusCircleIcon className="h-7 w-7" />}
+          title="new item"
+        />
+      </div>
     </header>
   );
 }

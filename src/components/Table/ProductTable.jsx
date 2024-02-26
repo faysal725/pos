@@ -15,6 +15,7 @@ import {
 
 
 import IconBtnLg from "../Button/IconBtnLg";
+import ItemCounter from "../Counter/ItemCounter";
 
 export default function ProductTable({ tableData }) {
   return (
@@ -27,7 +28,7 @@ export default function ProductTable({ tableData }) {
                 {tableData.map((product) => (
                   <tr key={product.id}>
                     <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">
-                      <PencilSquareIcon className="h-6 w-6 text-slate-600" />
+                      <PencilSquareIcon className="h-6 w-6 text-slate-500" />
                     </td>
                     <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500 font-semibold border">
                       {product.title.length > 20
@@ -38,7 +39,7 @@ export default function ProductTable({ tableData }) {
                       ${product.price}
                     </td>
                     <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500 font-semibold border">
-                      asdf
+                      <ItemCounter />
                     </td>
                     <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500 font-semibold border">
                       ${product.discount_price}

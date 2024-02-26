@@ -10,7 +10,7 @@ import ProductTable from '@/components/Table/ProductTable';
 import { getAllProducts } from '../../data/product-data';
 
 export default function CheckoutContainer() {
-  const products = getAllProducts()
+  const products = getAllProducts().slice(1, 4)
   return (
     <section>
         <CheckoutHeader />
