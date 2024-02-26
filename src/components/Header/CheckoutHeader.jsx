@@ -28,7 +28,6 @@ export default function CheckoutHeader() {
     setOpenModal(false); // Update parent state
   };
 
-
   return (
     <header className="px-8 py-4 flex items-start gap-x-9  ">
       <button onClick={() => setOpenSidebar(true)}>
@@ -129,8 +128,6 @@ export default function CheckoutHeader() {
       ) : (
         <></>
       )}
-
-
 
       <Modal
         onClick={handleChildClick}

@@ -1,29 +1,43 @@
-import { Fragment } from 'react'
-import { Menu, Transition } from '@headlessui/react'
-// import { ChevronDownIcon } from '@heroicons/react/20/solid'
+"use client";
+import React, { useState } from "react";
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
-}
+const Dropdown = ({ label, options, onSelect }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [presentValue, setPresentValue] = useState(null)
+  const handleClick = () => {
+    setIsOpen(!isOpen);
+  };
 
-export default function Dropdown({ value= "", placeholder="Input Something", changedValue, label="something"}) {
+  const handleItemSelect = (value) => {
+    onSelect(value);
+    setIsOpen(false);
+    setPresentValue(value)
+  };
 
   return (
-    <div>
-      <label htmlFor="location" className="block text-sm font-medium leading-6 text-gray-900">
-        {label}
-      </label>
-        {/* onChange={(e) => changedValue(e.target.value)} */}
-      <select
-        onChange={(e) => e.target.value == 'Active' ? changedValue(true) : changedValue(false)}
-        id="location"
-        name="location"
-        className="mt-2 block w-full rounded-md border-0 py-1.5 pl-3 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-indigo-600 sm:text-sm sm:leading-6"
-        defaultValue="Canada"
-      >
-        <option>Active</option>
-        <option>Inactive</option>
-      </select>
+    <div className="w-full">
+      <div className="border-b w-full border-b-slate-300">
+        <button onClick={handleClick} className="flex justify-between w-full text-gray-400 text-lg capitalize">
+          <p>{presentValue? presentValue : label} </p>
+          <p>{isOpen ? "▴" : "▾"}</p>
+        </button>
+      </div>
+    
+      {isOpen && (
+        <ul>
+          {options.map((option) => (
+            <li
+              key={option.value}
+              onClick={() => handleItemSelect(option.value)}
+              className="text-gray-800 text-base cursor-pointer"
+            >
+              {option.label}
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
-  )
-}
+  );
+};
+
+export default Dropdown;

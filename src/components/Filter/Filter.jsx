@@ -49,7 +49,7 @@ export default function Filter({ filters = ["all-category", "electronics"] }) {
 
               <XMarkIcon
                 onClick={() => setOpen(false)}
-                className="h-10 w-10 absolute top-6 right-2 cursor-pointer transition-all duration-100 hover:scale-110 text-black"
+                className="h-10 w-10 absolute md:hidden top-6 right-2 cursor-pointer transition-all duration-100 hover:scale-110 text-black"
               />
             </div>
           </div>
