@@ -30,18 +30,18 @@ export default function ProductTable({ tableData }) {
                     <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">
                       <PencilSquareIcon className="h-6 w-6 text-slate-500" />
                     </td>
-                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500 font-semibold border">
+                    <td className="whitespace-nowrap px-3 py-4 text-lg text-gray-500 font-semibold border">
                       {product.title.length > 20
                         ? product.title.slice(0, 20) + ". . ."
                         : product.title}
                     </td>
-                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500 font-semibold border">
+                    <td className="whitespace-nowrap px-3 py-4 text-lg text-gray-500 font-semibold border">
                       ${product.price}
                     </td>
-                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500 font-semibold border">
+                    <td className="whitespace-nowrap px-3 py-4 text-lg text-gray-500 font-semibold border">
                       <ItemCounter />
                     </td>
-                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500 font-semibold border">
+                    <td className="whitespace-nowrap px-3 py-4 text-lg text-gray-500 font-semibold border">
                       ${product.discount_price}
                     </td>
                     <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0 flex justify-center">
@@ -55,7 +55,7 @@ export default function ProductTable({ tableData }) {
                     className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0"
                     colspan="3"
                   ></td>
-                  <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500 font-semibold ">
+                  <td className="whitespace-nowrap px-3 py-4 text-base text-gray-500 font-semibold ">
                     Sub Total
                   </td>
                   <td
@@ -71,7 +71,7 @@ export default function ProductTable({ tableData }) {
                     className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0"
                     colspan="3"
                   ></td>
-                  <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500 font-semibold border-t">
+                  <td className="whitespace-nowrap px-3 py-4 text-base text-gray-500 font-semibold border-t">
                     Tax
                   </td>
                   <td
@@ -87,7 +87,7 @@ export default function ProductTable({ tableData }) {
                     className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0"
                     colspan="3"
                   ></td>
-                  <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500 font-semibold border-t">
+                  <td className="whitespace-nowrap px-3 py-4 text-base text-gray-500 font-semibold border-t">
                     Shipping
                   </td>
                   <td
@@ -100,7 +100,7 @@ export default function ProductTable({ tableData }) {
 
                 <tr className="border-none">
                   <td
-                    className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0"
+                    className="whitespace-nowrap py-4 pl-4 pr-3 text-base font-medium text-gray-900 sm:pl-0"
                     colspan="3"
                   ></td>
                   <td className="whitespace-nowrap px-3 py-4 text-sm text-blue-500 font-semibold border-t">

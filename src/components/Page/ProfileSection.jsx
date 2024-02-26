@@ -37,7 +37,7 @@ export default function ProfileSection() {
       </div>
       <PlusCircleIcon
         onClick={() => setOpenModal(true)}
-        className="h-10 w-10 text-indigo-500"
+        className="h-10 w-10 text-indigo-500 cursor-pointer transition-all duration-150 hover:scale-110"
       />
 
       {/* modal  */}

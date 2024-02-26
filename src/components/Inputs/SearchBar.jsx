@@ -22,6 +22,8 @@ export default function SearchBar() {
           type="search"
           name="search"
         />
+
+        <img src="/barcode.png" alt="" className="absolute top-3 right-0 h-9 w-9"/>
       </form>
     </div>
   );
