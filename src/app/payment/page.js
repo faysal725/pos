@@ -10,7 +10,6 @@ export default function Payment() {
         <CheckoutContainer/>
       </div>
       <div className="border border-l-2">
-        {/* <ProductContainer /> */}
         <PaymentContainer />
       </div>
     </main>

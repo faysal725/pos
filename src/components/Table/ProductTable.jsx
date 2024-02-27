@@ -137,7 +137,7 @@ export default function ProductTable({ tableData }) {
               </tbody>
             </table>
 
-            <div className=" py-2 flex justify-start gap-2 md:gap-0 md:justify-between flex-wrap ">
+            <div className=" py-2 flex justify-start gap-2  2xl:justify-between flex-wrap ">
               <IconBtnLg
                 icon={<XCircleIcon className="h-10 w-10" />}
                 classes="bg-red-100 text-red-500 hover:bg-red-500"

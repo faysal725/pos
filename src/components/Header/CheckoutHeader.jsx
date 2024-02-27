@@ -62,10 +62,13 @@ export default function CheckoutHeader() {
             }`}
           >
             {/* logo */}
-            <div>
-              <p className="text-3xl font-extrabold text-slate-800 text-center">
+            <div className="flex justify-center">
+              <Link
+                href="/"
+                className="text-3xl font-extrabold text-slate-800 text-center"
+              >
                 go<span className=" text-lime-500">B</span>illing
-              </p>
+              </Link>
             </div>
 
             {/* location  */}
@@ -77,7 +80,7 @@ export default function CheckoutHeader() {
             </div>
 
             {/* menu links  */}
-            <ul className="flex flex-col gap-y-6">
+            <ul className="flex flex-col gap-y-6  h-[75vh]">
               <li>
                 <Link
                   href="/dashboard"
@@ -115,6 +118,12 @@ export default function CheckoutHeader() {
                 >
                   <Cog6ToothIcon className="h-5 w-5" />
                   Settings
+                </button>
+              </li>
+
+              <li className="mt-auto flex justify-center">
+                <button className="border rounded border-slate-400 text-xl w-full py-2 transition-all duration-100 hover:bg-black hover:text-white">
+                  Logout
                 </button>
               </li>
             </ul>
