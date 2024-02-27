@@ -16,7 +16,7 @@ export default function Filter({ filters = ["all-category", "electronics"] }) {
       <div className="py-8 px-8 flex  relative items-start">
         <div className="flex justify-start  gap-4 flex-wrap">
           {filters.map((filter, index) => (
-            <FilterBtn key={index} url={"/" + filter} title={filter} />
+            <FilterBtn key={index} url={"/" + filter} title={filter} onClick={() => console.log('asdsf')}/>
           ))}
         </div>
         <button className="ml-auto" onClick={() => setOpen(true)}>
@@ -38,7 +38,7 @@ export default function Filter({ filters = ["all-category", "electronics"] }) {
 
               <div className="flex justify-start gap-x-4 py-8">
                 {filters.map((filter, index) => (
-                  <FilterBtn key={index} url={"/" + filter} title={filter} />
+                  <FilterBtn key={index} url={"/" + filter} title={filter} onClick={() => conosole.log('asdsf')}/>
                 ))}
               </div>
 
