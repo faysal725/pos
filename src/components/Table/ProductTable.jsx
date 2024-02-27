@@ -106,7 +106,7 @@ export default function ProductTable({ tableData }) {
                     className="whitespace-nowrap py-4 pl-4 pr-3 text-base font-medium text-gray-900 sm:pl-0"
                     colSpan="3"
                   ></td>
-                  <td className="whitespace-nowrap px-3 py-4 text-sm text-blue-500 font-semibold border-t">
+                  <td className="whitespace-nowrap px-3 py-4 text-base text-blue-500 font-semibold border-t">
                     Discount on Cart
                   </td>
                   <td

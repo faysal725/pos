@@ -1,22 +1,30 @@
 "use client";
 
+
+import { setProduct, getProducts } from "@/features/cart/cartSlice";
 import Link from "next/link";
 import React, { useContext, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+
+
 
 export default function Card({ productDetails }) {
   // for form submission
   const [userData, setUserData] = useState({});
+  const dispatch = useDispatch()
+  const {products} = useSelector((state) => state.cart)
 
   // const {
   //     product, setProduct
   //   } = useContext(CartContext);
 
   const addToCart = async () => {
-    // setProduct(productDetails)
+    dispatch(setProduct(productDetails))
+    console.log(products)
   };
 
   return (
-    <div className="group relative max-w-72 border flex flex-col justify-between border-slate-400  rounded-sm w-40">
+    <div  onClick={() => addToCart()} className="group relative max-w-72 border flex flex-col justify-between border-slate-400  rounded-sm w-40">
       <div className="overflow-hidden rounded-md  lg:aspect-none group-hover:opacity-75 h-40 w-40 p-2 mx-auto">
         <img
           src={productDetails.image}
