@@ -3,7 +3,7 @@
 import Filter from "@/components/Filter/Filter";
 import SearchBar from "@/components/Inputs/SearchBar";
 import React, { useState } from "react";
-import { getAllProducts, getProductsByCategory } from "../../data/product-data";
+import { getAllProducts, getProductsByCategory, getProductsBySearchString } from "../../data/product-data";
 import { getAllCategories } from "../../data/category-data";
 import Card from "@/components/Card/Card";
 
@@ -15,10 +15,14 @@ export default function ProductContainer() {
   const handleSelectedCategory = (category) => {
     setProducts(getProductsByCategory(category))
   }
+
+  const productsBySearch = (name) => {
+    setProducts(getProductsBySearchString(name))
+  }
   return (
     <section className="relative">
       {/* search bar  */}
-      <SearchBar />
+      <SearchBar searchString={productsBySearch} />
 
       {/* filters  */}
       <div>

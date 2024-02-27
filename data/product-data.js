@@ -273,3 +273,18 @@ export function getProductsByCategory (category) {
         return allProducts.filter((product) => product.category === category);
     }
 }
+
+
+export function getProductsBySearchString(searchString) {
+
+    // Normalize search string for case-insensitive matching
+    const normalizedSearchString = searchString.toLowerCase();
+    
+    return allProducts.filter((product) => {
+      // Check for matches in product name or description
+      const productNameMatches = product.title.toLowerCase().includes(normalizedSearchString);
+      const productDescriptionMatches = product.description && product.description.toLowerCase().includes(normalizedSearchString);
+  
+      return productNameMatches || productDescriptionMatches; 
+    });
+  }
