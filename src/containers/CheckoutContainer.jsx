@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import {
     EllipsisVerticalIcon,
@@ -8,14 +9,34 @@ import CheckoutHeader from '@/components/Header/CheckoutHeader';
 import ProfileSection from '@/components/Page/ProfileSection';
 import ProductTable from '@/components/Table/ProductTable';
 import { getAllProducts } from '../../data/product-data';
+import { useSelector, useDispatch } from "react-redux";
+import { removeProduct, setQuantity } from '@/features/cart/cartSlice';
+
 
 export default function CheckoutContainer() {
-  const products = getAllProducts().slice(1, 4)
+  
+  const { products, subTotal,total, tax, shipping, discount   } = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
+  
+  const handleQty = (qty, index) => {
+    let quantityChangeProduct = {
+      index: index,
+      quantity: qty
+    }
+
+    dispatch(setQuantity(quantityChangeProduct))
+  }
   return (
     <section>
         <CheckoutHeader />
         <ProfileSection />
-        <ProductTable tableData={products}/>
+
+        {/* {
+          products? <ProductTable tableData={products} subTotal={subTotal} tax={tax} shipping={shipping} total={total} discount={discount}/>
+          :
+          <></>
+        } */}
+        <ProductTable tableData={products} subTotal={subTotal} tax={tax} shipping={shipping} total={total} discount={discount} deleteByIndex={(index) => dispatch(removeProduct(index))} setQuantity={(qty, index) => handleQty(qty, index)}/>
     </section>
   )
 }

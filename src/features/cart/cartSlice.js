@@ -10,6 +10,9 @@ export const cartSlice = createSlice({
     total: 0,
     deliveryCharge: 0,
     totalProduct: 0,
+    tax:0,
+    shipping:0,
+    discount: 0
   },
   reducers: {
     open: (state) => {
@@ -41,23 +44,43 @@ export const cartSlice = createSlice({
 
         state.products.push(productBody(product));
       }
+
+      state.tax = 34
+      state.shipping = 20
+      state.discount = 10
     },
 
     removeProduct(state, action) {
       console.log("product removal", state.products);
       let index = action.payload;
       state.products.splice(index, 1);
+      if (state.products.length  == 0) {
+        state.tax = 0
+        state.shipping = 0
+        state.discount = 0
+      }
+    },
+
+    setQuantity(state, action){
+      let index = action.payload.index;
+      let qty = action.payload.quantity;
+
+      console.log(index, qty, state.products[index].quantity)
+      
+      // state.products.splice(index, 1);
+
+      state.products[index].quantity = qty
     },
 
     emptyCart(state) {
-      state.vendorId = null;
       state.deliveryCharge = 0;
-      state.kmCharge = 0;
-      state.weightCharge = 0;
-      state.baseFare = 0;
       state.subTotal = 0;
       state.total = 0;
-      state.products.splice(0, state.products.length);
+      state.products= [];
+      
+      state.tax = 0
+      state.shipping = 0
+      state.discount =  0
     },
 
     getProducts(state) {
@@ -68,8 +91,10 @@ export const cartSlice = createSlice({
       state.products.push(products);
     },
 
-    getTotal(state) {
-      return Math.ceil(state.subTotal + state.deliveryCharge);
+    setTotal(state) {
+      console.log(Math.ceil(state.subTotal + state.deliveryCharge + state.tax + state.shipping  - state.discount))
+      // return Math.ceil(state.subTotal + state.deliveryCharge + state.tax + state.shipping  - state.discount);
+      state.total = Math.ceil(state.subTotal + state.deliveryCharge + state.tax + state.shipping  - state.discount)
     },
     setSubTotal(state, action) {
       state.subTotal = 0;
@@ -97,8 +122,9 @@ export const {
   getProducts,
   setProducts,
   removeProduct,
+  setQuantity,
   emptyCart,
-  getTotal,
+  setTotal,
   setSubTotal,
   getSubTotal,
 } = cartSlice.actions;
@@ -112,7 +138,7 @@ const productBody = (product) => {
     name: product.title,
     image: product.image,
     quantity: 1,
-    price: product.price,
+    price: product.discount_price,
   };
 };
 
