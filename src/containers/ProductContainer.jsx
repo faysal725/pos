@@ -1,14 +1,20 @@
+'use client'
+
 import Filter from "@/components/Filter/Filter";
 import SearchBar from "@/components/Inputs/SearchBar";
-import React from "react";
-import { getAllProducts } from "../../data/product-data";
+import React, { useState } from "react";
+import { getAllProducts, getProductsByCategory } from "../../data/product-data";
 import { getAllCategories } from "../../data/category-data";
 import Card from "@/components/Card/Card";
 
 export default function ProductContainer() {
-  const products = getAllProducts();
+  // const products = getAllProducts();
   const categories = getAllCategories();
-
+  const [products, setProducts] = useState(getAllProducts())
+  
+  const handleSelectedCategory = (category) => {
+    setProducts(getProductsByCategory(category))
+  }
   return (
     <section className="relative">
       {/* search bar  */}
@@ -16,7 +22,8 @@ export default function ProductContainer() {
 
       {/* filters  */}
       <div>
-        <Filter filters={categories} />
+        <Filter filters={categories} selectedCategory={handleSelectedCategory}/>
+        {/* selectedCategory={(cat) => handleSelectedCategory(cat)} */}
       </div>
 
       <ul

@@ -266,3 +266,10 @@ export function getAllProducts() {
     return allProducts
 }
 
+export function getProductsByCategory (category) {
+    if (category == 'all') {
+        return allProducts
+    }else{
+        return allProducts.filter((product) => product.category === category);
+    }
+}

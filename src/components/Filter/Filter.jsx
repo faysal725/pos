@@ -8,15 +8,16 @@ import {
 import Link from "next/link";
 import FilterBtn from "../Button/FilterBtn";
 
-export default function Filter({ filters = ["all-category", "electronics"] }) {
+export default function Filter({ filters = ["all-category", "electronics"], selectedCategory }) {
   const [open, setOpen] = useState(false);
 
   return (
     <>
       <div className="py-8 px-8 flex  relative items-start">
         <div className="flex justify-start  gap-4 flex-wrap">
+          <FilterBtn  url='' title="All" onClick={() => selectedCategory('all')}/>
           {filters.map((filter, index) => (
-            <FilterBtn key={index} url={"/" + filter} title={filter} onClick={() => console.log('asdsf')}/>
+            <FilterBtn key={index} url={"/" + filter} title={filter} onClick={() => selectedCategory(filter)}/>
           ))}
         </div>
         <button className="ml-auto" onClick={() => setOpen(true)}>
