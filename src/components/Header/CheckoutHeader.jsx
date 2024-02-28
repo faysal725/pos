@@ -84,7 +84,7 @@ export default function CheckoutHeader() {
               <li>
                 <Link
                   href="/dashboard"
-                  className="flex items-center gap-5 text-2xl text-slate-600"
+                  className="flex items-center gap-5 text-2xl text-slate-600 transition-all duration-150 hover:text-indigo-600"
                 >
                   <Squares2X2Icon className="h-5 w-5" />
                   Dashboard
@@ -93,7 +93,7 @@ export default function CheckoutHeader() {
               <li>
                 <Link
                   href="#"
-                  className="flex items-center gap-5 text-2xl text-slate-600"
+                  className="flex items-center gap-5 text-2xl text-slate-600 transition-all duration-150 hover:text-indigo-600"
                 >
                   <MapPinIcon className="h-5 w-5" />
                   Location
@@ -102,7 +102,7 @@ export default function CheckoutHeader() {
               <li>
                 <Link
                   href="#"
-                  className="flex items-center gap-5 text-2xl text-slate-600"
+                  className="flex items-center gap-5 text-2xl text-slate-600 transition-all duration-150 hover:text-indigo-600"
                 >
                   <CurrencyDollarIcon className="h-5 w-5" />
                   POS Invoices
@@ -114,7 +114,7 @@ export default function CheckoutHeader() {
                     setOpenSidebar(false);
                     setOpenModal(true);
                   }}
-                  className="flex items-center gap-5 text-2xl text-slate-600"
+                  className="flex items-center gap-5 text-2xl text-slate-600 transition-all duration-150 hover:text-indigo-600"
                 >
                   <Cog6ToothIcon className="h-5 w-5" />
                   Settings

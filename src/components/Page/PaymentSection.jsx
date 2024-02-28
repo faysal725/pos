@@ -19,25 +19,25 @@ export default function PaymentSection() {
   const navigation = () => {
     return (
       <ul className="col-span-4 p-8 pr-0 flex flex-col gap-y-7 border-r">
-        <li className="flex items-center gap-x-4 text-slate-500">
+        <li className="flex items-center gap-x-4 text-slate-500 transition-all duration-150 hover:text-indigo-500">
           <BanknotesIcon className="h-6 w-6 " />
           <Link href="/payment/cash" className="text-xl font-medium">
             Cash
           </Link>
         </li>
-        <li className="flex items-center gap-x-4 text-indigo-500">
+        <li className="flex items-center gap-x-4 text-slate-500 transition-all duration-150 hover:text-indigo-500">
           <CreditCardIcon className="h-6 w-6 " />
           <Link href="/payment/cash" className="text-xl font-medium ">
             Card
           </Link>
         </li>
-        <li className="flex items-center gap-x-4 text-slate-500">
+        <li className="flex items-center gap-x-4 text-slate-500 transition-all duration-150 hover:text-indigo-500">
           <UserIcon className="h-6 w-6 " />
           <Link href="/payment/cash" className="text-xl font-medium">
             On Account
           </Link>
         </li>
-        <li className="flex items-center gap-x-4 text-slate-500">
+        <li className="flex items-center gap-x-4 text-slate-500 transition-all duration-150 hover:text-indigo-500">
           <CreditCardIcon className="h-6 w-6 " />
           <Link href="/payment/cash" className="text-xl font-medium">
             Checque
