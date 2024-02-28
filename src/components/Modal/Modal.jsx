@@ -7,7 +7,7 @@ export default function Modal({ shouldModalOpen,title, children, onClick }) {
   
   return (
     <div className={`fixed top-0 left-0 bg-slate-600/30 w-full h-full z-10 flex justify-center items-center ${!shouldModalOpen ? 'hidden' : ''}`}>
-      <div className="p-3 px-6 pb-6 relative min-w-96 bg-white ">
+      <div className="p-3 px-6 pb-6 relative min-w-96 rounded-md shadow-lg bg-white ">
         {/* settings */}
         <div>
           <div className="relative pb-8 text-center">

@@ -10,8 +10,10 @@ import Link from "next/link";
 import React, { useState } from "react";
 import FormInput from "../Inputs/FormInput";
 import IconBtnLg from "../Button/IconBtnLg";
+import { useRouter } from "next/navigation";
 
 export default function PaymentSection() {
+  const router = useRouter();
   const [userData, setUserData] = useState({});
 
   const navigation = () => {
@@ -23,9 +25,9 @@ export default function PaymentSection() {
             Cash
           </Link>
         </li>
-        <li className="flex items-center gap-x-4 text-slate-500">
+        <li className="flex items-center gap-x-4 text-indigo-500">
           <CreditCardIcon className="h-6 w-6 " />
-          <Link href="/payment/cash" className="text-xl font-medium">
+          <Link href="/payment/cash" className="text-xl font-medium ">
             Card
           </Link>
         </li>
@@ -50,7 +52,6 @@ export default function PaymentSection() {
         {navigation()}
 
         <div className="col-span-8 p-8  flex flex-col gap-y-8">
-          
           <label className="block">
             <FormInput
               changedValue={(card_name) =>
@@ -100,6 +101,7 @@ export default function PaymentSection() {
               icon={<XCircleIcon className="h-10 w-10" />}
               classes="bg-red-100 text-red-500 hover:bg-red-500"
               title="Cancel"
+              onClick={() => router.push("/")}
             />
 
             <IconBtnLg

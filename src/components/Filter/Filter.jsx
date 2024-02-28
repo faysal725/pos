@@ -38,8 +38,16 @@ export default function Filter({ filters = ["all-category", "electronics"], sele
               </div>
 
               <div className="flex justify-start gap-x-4 py-8">
+              <FilterBtn  url='' title="All" onClick={() => {
+                selectedCategory('all')
+                setOpen(false)
+              }}/>
                 {filters.map((filter, index) => (
-                  <FilterBtn key={index} url={"/" + filter} title={filter} onClick={() => conosole.log('asdsf')}/>
+                  <FilterBtn key={index} url={"/" + filter} title={filter} onClick={() => {
+
+                    selectedCategory(filter)
+                    setOpen(false)
+                  }}/>
                 ))}
               </div>
 
